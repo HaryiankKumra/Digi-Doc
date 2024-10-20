@@ -1,0 +1,131 @@
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: black;
+  --PRIMARY-COLOR: #34495e;
+  --COLOR:black;
+  --SECN-COLOR:#ecf0f1;
+  --ACCENT-COLOR: #e74c3c;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.doctor-page {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 280px;
+  background-color: #34495e;
+  color: #000; /* Changed text color to black */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-profile-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  color: black;
+}
+
+.doctor-profile-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  background-color: #ecf0f1;
+}
+
+.left-column, .right-column {
+  
+  padding: 20px;
+  
+}
+
+.patient-history, .patient-actions {
+  margin-bottom: 10px;
+  
+  padding: 20px;
+}
+
+.patient-history input, .patient-actions input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--PRIMARY-COLOR);
+  background-color: var(--SECN-COLOR);
+  color: #000;
+}
+
+.patient-history button, .patient-actions button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--ACCENT-COLOR);
+  color: white;
+  cursor: pointer;
+}
+
+.patient-history button:hover, .patient-actions button:hover {
+  background-color: var(--ACCENT-COLOR);
+}
+
+.patient-history-display {
+  display: flex;
+  gap: 20px;
+}
+
+.patient-history-display ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.patient-history-display li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.patient-history-display li:last-child {
+  border-bottom: none;
+}
+
+.patient-details-history{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 7rem;
+}
+.right-column{
+  margin-left: 7rem;
+}
+.patient-history-column,
+.patient-details-column{
+  width: 50%; 
+  padding: 0;
+}
+.patient-actions,
+.patient-history{
+  margin: 0;
+  padding: 0;
+}
