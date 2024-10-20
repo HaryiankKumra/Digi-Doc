@@ -1,0 +1,100 @@
+/* General container styling */
+.chatbot-container {
+  background-color: #f0f4f8;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center; /* Ensures that all text is center-aligned */
+}
+
+/* Chatbox where question and answers are displayed */
+.chatbox {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Header styling */
+.chatbot-header {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Answer container */
+.answer-box {
+  font-size: 1.2rem;
+  background-color: #f9fafb;
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 20px;
+  min-height: 100px; /* Ensures some space even when answer is short */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Question input area */
+.textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 1.2rem;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  resize: none;
+  outline: none;
+  margin-bottom: 15px;
+  text-align: center; /* Ensures that text input is center-aligned */
+}
+
+/* Button styling */
+.generate-button {
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.generate-button:hover {
+  background-color: #45a049;
+}
+
+.generate-button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .chatbot-header {
+    font-size: 2rem;
+  }
+
+  .textarea {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .generate-button {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
