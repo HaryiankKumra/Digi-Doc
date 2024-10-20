@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Medical Records</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Patient Avatar" width="80">
+        </figure>
+        <div class="info-content">
+          <h1 class="name">Patient Name</h1>
+          <p class="title">Patient Status</p>
+        </div>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+        </button>
+      </div>
+      <div class="sidebar-info_more">
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:Patient@example.com" class="contact-link">Patient@example.com</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+17986520243" class="contact-link">+17986520243</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="calendar-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+              <time datetime="2005-11-09">November 9, 2005</time>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Faridabad, Haryana, India</address>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    
+
+    <div class="main-content">
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item"><button class="navbar-link active" data-nav-link>About</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link>Records</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link>Add Prescription</button></li>
+        </ul>
+      </nav>
+
+      <article class="about active" data-page="about">
+        <header>
+          <h2 class="h2 article-title">About Me</h2>
+        </header>
+        <section class="about-text">
+          <p>Patient's brief description and general information.</p>
+        </section>
+      </article>
+
+      <article class="records" data-page="records">
+        <header>
+          <h2 class="h2 article-title">Medical Records</h2>
+        </header>
+        <section class="medical-history">
+          <h3>Medical History</h3>
+          <ul>
+            <li>Condition 1: Description</li>
+            <li>Condition 2: Description</li>
+          </ul>
+        </section>
+        <section class="prescriptions">
+          <h3>Prescriptions</h3>
+          <ul>
+            <li>Prescription 1: Details</li>
+            <li>Prescription 2: Details</li>
+          </ul>
+        </section>
+       
+      </article>
+      
+
+
+<article class="contact" data-page="contact">
+  <header>
+    <h2 class="h2 article-title">Add New Prescription</h2>
+  </header>
+  <section class="contact-info">
+    <p>Additional contact information and form if needed.</p>
+  </section>
+  <section class="add-prescription">
+    
+    <button id="showPrescriptionForm">Add New Prescription</button>
+  </section>
+  <section id="prescriptionForm" style="display: none;">
+    <h3>Prescription Details</h3>
+    <form>
+      <div>
+        <label for="doctorName">Doctor's Name:</label>
+        <input type="text" id="doctorName" name="doctorName">
+      </div>
+      <div>
+        <label for="reason">Reason for Checkup:</label>
+        <input type="text" id="reason" name="reason">
+      </div>
+      <div>
+        <label for="findings">Findings:</label>
+        <textarea id="findings" name="findings"></textarea>
+      </div>
+      <div>
+        <label for="prescription">Prescription:</label>
+        <textarea id="prescription" name="prescription"></textarea>
+      </div>
+      <div>
+        <label for="visitDate">Date of Doctor Visit:</label>
+        <input type="date" id="visitDate" name="visitDate">
+      </div>
+      <div>
+        <label for="file">Upload File:</label>
+        <input type="file" id="file" name="file">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="successMessage" style="display: none;">
+      <p>Prescription uploaded successfully!</p>
+      <button id="goToHomePage">Take me to the home page</button>
+    </div>
+  </section>
+</article>
+
+      <article class="contact" data-page="contact">
+        <header>
+          <h2 class="h2 article-title">Contact Information</h2>
+        </header>
+        <section class="contact-info">
+          <p>Additional contact information and form if needed.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Include Bootstrap for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    
+    <!-- Custom CSS for styling QR code -->
+    <style>
+        body {
+            background-color: #f7f3ee; /* Skin tone background color */
+            font-family: Arial, sans-serif;
+            padding-top: 50px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .qr-code {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-control {
+            margin-bottom: 10px;
+        }
+
+        #generate {
+            width: 100%;
+        }
+
+        .ocr-message {
+            text-align: center;
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+
+    <title>QR Code Generator</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        
+        <!-- QR code image placeholder -->
+        <img src="https://quickchart.io/qr?text=Hello%20world&ecLevel=H&size=200&format=svg"
+            class="qr-code img-thumbnail img-responsive" />
+
+        <div class="form-horizontal">
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" id="generate">Generate QR Code</button>
+            </div>
+        </div>
+
+        <!-- OCR message -->
+        <div class="ocr-message">
+            <p>OCR (Optical Character Recognition) coming soon</p>
+        </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <!-- JavaScript code for QR code generation -->
+    <script>
+        $(function () {
+            // Specify an onclick function for the generate button
+            $('#generate').click(function () {
+                // Get the name and email entered by the user
+                var name = $('#name').val();
+                var email = $('#email').val();
+
+                // Combine name and email into a single string
+                var content = name + ', ' + email;
+
+                // Generate the link for the QR Code with the combined data
+                var finalURL = 'https://quickchart.io/qr?text=' + encodeURIComponent(content) + '&chs=160x160&chld=L|0';
+
+                // Replace the src of the image with the QR code image
+                $('.qr-code').attr('src', finalURL);
+            });
+        });
+    </script>
+</body>
+
+</html>
