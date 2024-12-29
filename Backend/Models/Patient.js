@@ -1,8 +1,8 @@
 // The basic schematic of the documents stored in the Patients collection of MongoDB
 
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import { Schema as _Schema, model } from 'mongoose';
+const Schema = _Schema;
 
 // Define the Prescription schema
 const prescriptionSchema = new Schema({
@@ -70,6 +70,6 @@ const patientSchema = new Schema({
   prescriptions: [prescriptionSchema] 
 }, { collection: 'Patient' }); 
 
-const Patient = mongoose.model('Patient', patientSchema);
+const Patient = model('Patient', patientSchema);
 
-module.exports = Patient;
+export default Patient;

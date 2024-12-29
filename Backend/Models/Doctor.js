@@ -1,8 +1,8 @@
 // The basic schematic of the documents stored in the Doctors collection of MongoDB
 
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import { Schema as _Schema, model } from 'mongoose';
+const Schema = _Schema;
 
 const DoctorSchema = new Schema({
     d_name: {
@@ -40,6 +40,6 @@ const DoctorSchema = new Schema({
     }
 }, { collection: 'Doctors' });
 
-const Doctors = mongoose.model('Doctor', DoctorSchema);
+const Doctors = model('Doctor', DoctorSchema);
 
-module.exports = Doctors;
+export default Doctors;

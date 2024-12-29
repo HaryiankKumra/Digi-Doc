@@ -2,9 +2,8 @@
 // --> One is to get the main home page 
 // --> Another is the signup functionality for new doctor and new Patient
 
-const Patient = require('../Models/Patient');
-const Doctors = require('../Models/Doctor');
-const connectDB = require('../Database/conn')
+import Patient from '../Models/Patient';
+import connectDB from '../Database/conn';
 
 const getHomepage = async (req, res) => {
     res.status(200).json({ message: "Welcome to home page" });
@@ -50,7 +49,7 @@ const CreatePatient = async (req, res) => {
     }
 };
 
-const Doctor = require('../Models/Doctor');
+import Doctor from '../Models/Doctor';
 
 const CreateDoctor = async (req, res) => {
     let conn = await connectDB()
@@ -95,4 +94,4 @@ const CreateDoctor = async (req, res) => {
 
 
 
-module.exports = { CreatePatient, CreateDoctor, getHomepage };
+export default { CreatePatient, CreateDoctor, getHomepage };

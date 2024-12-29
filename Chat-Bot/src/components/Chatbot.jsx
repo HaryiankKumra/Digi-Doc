@@ -30,7 +30,7 @@ function Chatbot() {
     setDisplayedAnswer("Loading your answer... \n It might take up to 10 seconds");
     try {
       const response = await axios({
-       url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyDkLAPzC29ZUXN2SaX5XHHHMxEC8D2mSck",
+       url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyAQKDkSryog8A0O69sVmQsQp8STvM2bJJ8",
         method: "post",
         data: {
           contents: [

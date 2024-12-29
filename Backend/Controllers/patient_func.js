@@ -6,7 +6,6 @@
 // --> Viewing some previous records 
 // --> Adding the prescription
 
-const Patient = require('../Models/Patient')
 
 
 const PatientAboutPage = async(req,res) => {
@@ -25,7 +24,7 @@ const PatientRecords = async(req,res) => {
 
 
 const AddPrescription = async (req, res) => {
-    const { email , pid , dname, rfc, find, pres, dte , url} = req.body;
+    const { dname, rfc, find, pres, dte , url} = req.body;
   
     if (!dname || !rfc || !find || !pres || !dte || !url) {
       return res.status(400).json({ success: false, message: "Required fields are missing" });
@@ -49,4 +48,4 @@ const AddPrescription = async (req, res) => {
       res.status(500).json({ success: false, message: error.message });
     }
   };
-module.exports = {AddPrescription,PatientAboutPage,PatientRecords}
+export default {AddPrescription,PatientAboutPage,PatientRecords}

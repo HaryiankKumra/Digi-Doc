@@ -6,4 +6,4 @@ const errorHandlermiddleware = async(err,req,res,next) => {
 
 }
 
-module.exports = errorHandlermiddleware
+export default errorHandlermiddleware

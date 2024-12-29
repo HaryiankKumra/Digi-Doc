@@ -1,8 +1,8 @@
 // This is an extra file which initially we planned on using to use multer to store an image on the diskStorage and then sending it to cloudinary as storage
 //**FOR REFERENCE
-const multer = require("multer");
+import multer, { diskStorage } from "multer";
 
-const storage = multer.diskStorage({
+const storage = diskStorage({
     destination: function (req, file, cb) {
         console.log(req.body);
         console.log(file);
@@ -17,4 +17,4 @@ const upload = multer({ storage: storage });
 
 
 
-module.exports = upload;
+export default upload;

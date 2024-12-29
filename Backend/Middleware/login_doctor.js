@@ -2,8 +2,8 @@
 // It is an middleware
 
 
-const Doctors = require('../Models/Doctor');
-const connectDB = require('../Database/conn');
+import { findOne } from '../Models/Doctor';
+import connectDB from '../Database/conn';
 
 const dAuth = async (req, res, next) => {
     const { d_email, did } = req.body;
@@ -25,7 +25,7 @@ const dAuth = async (req, res, next) => {
     console.log('Querying for doctor:', { did, d_email });
 
     try {
-        const doctor = await Doctors.findOne({ did, d_email });
+        const doctor = await findOne({ did, d_email });
         console.log('Found doctor:', doctor);
 
         if (!doctor) {
@@ -41,7 +41,4 @@ const dAuth = async (req, res, next) => {
     }
 }
 
-module.exports = dAuth;
-
-
-module.exports = dAuth;
+export default dAuth;

@@ -2,8 +2,8 @@
 
 
 
-const cloudinary = require('cloudinary').v2;
-const fs = require('fs')
+import { v2 as cloudinary } from 'cloudinary';
+import { unlinkSync } from 'fs';
 
     cloudinary.config({
         cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -24,7 +24,7 @@ const UploadOnCloudinary = async (localFilePath) => {
         console.log("File is uploaded on cloudinary",response.url);
         return response
     } catch (error) {
-        fs.unlinkSync(localFilePath)
+        unlinkSync(localFilePath)
         //remove the locally saved temporat file
         return null;
     }
@@ -34,4 +34,4 @@ const UploadOnCloudinary = async (localFilePath) => {
 
 
 
-module.exports = {UploadOnCloudinary}
+export default {UploadOnCloudinary}

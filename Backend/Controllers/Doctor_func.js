@@ -6,8 +6,8 @@
 // --> Viewing details of a given patient
 // --> Adding an prescription for the patients record
 
-const Patient = require('../Models/Patient')
-const connectDB = require('../Database/conn')
+import { findOne } from '../Models/Patient'
+import connectDB from '../Database/conn'
 
 
 const DoctorHomePage = async(req,res) => {
@@ -25,7 +25,7 @@ const ViewPatient = async(req,res) => {
     console.log(pid);
     
     try {
-        const patient = await Patient.findOne({patientId:req.body.pid})
+        const patient = await findOne({patientId:req.body.pid})
         console.log(patient);
         if(!patient){
             console.log("invalid patient id entered");
@@ -60,7 +60,7 @@ return res.status(400).json({ success: false, message: "Required fields are miss
 
         
 try {
-    const patient1 = await Patient.findOne({patientId:req.body.pid})
+    const patient1 = await findOne({patientId:req.body.pid})
     if(!patient1){
         console.log("invalid patient id entered");
         return res.status(401).json({success: true , data : []})
@@ -88,6 +88,6 @@ try {
 
 }}
 
-module.exports = {addPrescription,DoctorHomePage,ViewPatient}
+export default {addPrescription,DoctorHomePage,ViewPatient}
 
 

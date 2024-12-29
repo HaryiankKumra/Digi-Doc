@@ -1,14 +1,14 @@
 // Here we are establishing the connection with the database on our MongoDB server using Mongoose 
 
 
-const mongoose = require('mongoose');
-const dotenv = require('dotenv')
+import { connect } from 'mongoose';
+import { config } from 'dotenv';
 
-dotenv.config()
+config()
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
+    await connect(process.env.MONGODB_URI);
     console.log('MongoDB connected successfully to Digi Doc');
   } catch (error) {
     console.error('MongoDB connection failed:', error.message);
@@ -16,4 +16,4 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;
+export default connectDB;

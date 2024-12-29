@@ -1,22 +1,22 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const errorHandlermiddleware = require('../Backend/Middleware/error-handler')
-const notfoundmiddleware = require('../Backend/Middleware/not-found')
-dotenv.config();
+import express, { json, urlencoded } from 'express';
+import { config } from 'dotenv';
+import cors from 'cors';
+import errorHandlermiddleware from '../Backend/Middleware/error-handler';
+import notfoundmiddleware from '../Backend/Middleware/not-found';
+config();
 
 
 const app = express()
 
 app.use(cors());
 
-const patient_router = require('../Backend/Routers/patient_routes');
-const doctor_router = require('../Backend/Routers/doctor_routes');
-const home_router = require('../Backend/Routers/home_routes');
+import patient_router from '../Backend/Routers/patient_routes';
+import doctor_router from '../Backend/Routers/doctor_routes';
+import home_router from '../Backend/Routers/home_routes';
 
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true}))
+app.use(json())
+app.use(urlencoded({ extended: true}))
 
 
 app.use('/patient',patient_router);
