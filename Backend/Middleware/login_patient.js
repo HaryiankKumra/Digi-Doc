@@ -2,8 +2,8 @@
 // It is an middleware
 
 
-const Patient = require('../Models/Patient');
-const connectDB = require('../Database/conn')
+import { findOne } from '../Models/Patient';
+import connectDB from '../Database/conn';
 
 const pAuth = async (req, res, next) => {
     console.log('Authentication middleware called');
@@ -23,7 +23,7 @@ const pAuth = async (req, res, next) => {
     }
 
     try {
-        const patient = await Patient.findOne({ email: Email, patientId: pid });
+        const patient = await findOne({ email: Email, patientId: pid });
         console.log('Patient found:', patient);
 
         if (!patient) {
@@ -39,4 +39,4 @@ const pAuth = async (req, res, next) => {
     }
 };
 
-module.exports = pAuth;
+export default pAuth;
