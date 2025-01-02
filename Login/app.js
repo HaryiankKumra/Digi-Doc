@@ -15,7 +15,7 @@ sign_up_btn.addEventListener('click', () =>{
 
 // Add click event listeners to redirect
 doctorBtn.addEventListener('click', () => {
-  window.location.href = 'http://localhost:5173/'; // Redirect to doctor page
+  window.location.href = 'https://doctor-one-sand.vercel.app/'; // Redirect to doctor page
 });
 
 patientBtn.addEventListener('click', () => {
